@@ -1,31 +1,44 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/17 14:36:48 by dkolopen          #+#    #+#             */
+/*   Updated: 2024/03/17 15:12:07 by dkolopen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_atoi(const char *nptr)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
-    int sign = 1; 
-    int result; 
-    while(*nptr)
-    {
-        if(*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-        {
-            *nptr++;
-        }
-        if(*nptr =='+' || *nptr == '-')
-        {
-            if(*nptr == '-')
-            {
-                sign *= -1; 
-            }
-            nptr++; 
-        }
-        while (*nptr >= '0' && *nptr <= '9')
-        {
-            result = result * 10 + (*nptr - '0');
-            nptr++; 
-        }
-    }
-    return (result * sign);
+	int	sign;
+	int	result;
+
+	sign = 1;
+	while (*nptr)
+	{
+		if (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		{
+			*nptr++;
+		}
+		if (*nptr == '+' || *nptr == '-')
+		{
+			if (*nptr == '-')
+			{
+				sign *= -1;
+			}
+			nptr++;
+		}
+		while (*nptr >= '0' && *nptr <= '9')
+		{
+			result = result * 10 + (*nptr - '0');
+			nptr++;
+		}
+	}
+	return (result * sign);
 }
 
 /*int main()

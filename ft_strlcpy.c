@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:55:53 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/04 15:13:18 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 14:57:21 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	
+
 	i = 0;
-	
 	while (i < size - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
@@ -26,16 +24,16 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	if (size > 0)
 	{
-	dest[i] = '\0';
+		dest[i] = '\0';
 	}
-	while (src[i] != '\0') 
-	{ 
-		i++; 
+	while (src[i] != '\0')
+	{
+		i++;
 	}
 	return (i);
 }
 
-int	main()
+/*int	main()
 {	
 	size_t n = 4;
 	char string_source[] = "Hello Hello";
@@ -43,4 +41,4 @@ int	main()
 	ft_strlcpy(string_dest, string_source, n);
 	printf("%s", string_dest);
 	return 0;
-}
+}*/

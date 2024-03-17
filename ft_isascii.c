@@ -6,26 +6,25 @@
 /*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:40:37 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/01 14:57:55 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 13:01:34 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if(c >= 0 && c >= 127)
+	if (c >= 0 && c >= 127)
 	{
-		return 1;
+		return (1);
 	}
-	else 
+	else
 	{
-		return 0;
+		return (0);
 	}
 }
 
-int	main()
+/*int	main()
 {
 	unsigned char ascii;
 	char n;
@@ -37,4 +36,4 @@ int	main()
 
 	printf("%d", result);
 	printf("%d", result1);
-}
+}*/

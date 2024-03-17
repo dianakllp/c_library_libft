@@ -1,15 +1,24 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/17 14:40:14 by dkolopen          #+#    #+#             */
+/*   Updated: 2024/03/17 15:01:01 by dkolopen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memset(void *str, int ch, size_t n)
+#include "libft.h"
+
+void	*ft_memset(void *str, int ch, size_t n)
 {
-	unsigned char *test = str; // Why do we use str not *str. 
-	//This is the same as that we use &str[0] and str[0].
-	//The first is the adres and the second one is the character (or string)
-	ch = (unsigned char) ch; 
-	while(n)
+	unsigned char	*test;
+
+	test = str;
+	ch = (unsigned char) ch;
+	while (n)
 	{
 		*test = ch;
 		test++;
@@ -18,11 +27,11 @@ void *ft_memset(void *str, int ch, size_t n)
 	return (test);
 }
 
-int	main()
+/*int	main()
 {
 	char string[] = "Hello";
 	int test = '+';
 	//ft_memset(string, test, 3);
 	memset(string, test, 3);
 	printf("%s", string);
-}
+}*/

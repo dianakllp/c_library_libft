@@ -1,24 +1,36 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/17 14:37:57 by dkolopen          #+#    #+#             */
+/*   Updated: 2024/03/17 14:37:59 by dkolopen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int memcmp(const void *ptr1, const void *ptr2, size_t num)
+#include "libft.h"
+
+int	memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
-    unsigned char *pointer1 = ptr1;
-    unsigned char *pointer2 = ptr2;
+	unsigned char	*pointer1;
+	unsigned char	*pointer2;
 
-    while(num)
-    {
-        if(*pointer1 != *pointer2)
-        {
-            return (*pointer1 - *pointer2);
-        }
-        *pointer1++;
-        *pointer2++;
-        num--;
-    }
-    return (0);
+	pointer2 = ptr2;
+	pointer1 = ptr1;
+	while (num)
+	{
+		if (*pointer1 != *pointer2)
+		{
+			return (*pointer1 - *pointer2);
+		}
+		*pointer1++;
+		*pointer2++;
+		num--;
+	}
+	return (0);
 }
-
 /*int main()
 {
 	char	str[] = "Hello ";
