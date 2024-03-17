@@ -6,7 +6,7 @@
 /*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:36:33 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 18:32:43 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 19:09:37 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	nb;
+	char	num;
 	if (fd < 0)
 	{
 		return;
@@ -33,6 +33,6 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd(n / 10, fd);
 	}
-	nb = n % 10 + '0';
-	write (fd, &nb, 1);
+	num = n % 10 + '0';
+	write (fd, &num, 1);
 }
