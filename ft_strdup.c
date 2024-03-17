@@ -6,15 +6,15 @@
 /*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:37:47 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 14:55:08 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:45:39 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
-	int		i;
+	size_t		i;
 	size_t	str_len;
 	char	*dest;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:36:48 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 15:12:07 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 18:24:38 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	result;
 
+	result = 0;
 	sign = 1;
 	while (*nptr)
 	{
 		if (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		{
-			*nptr++;
+			nptr++;
 		}
 		if (*nptr == '+' || *nptr == '-')
 		{
@@ -43,16 +44,8 @@ int	ft_atoi(const char *nptr)
 
 /*int main()
 {
-	char str1[] = "15613";
-	char str2[] = "-15613";
-	char str3[] = "+15asd613";
-	char str4[] = "-1561dase3";
-	ft_putnbr_fd(ft_atoi(str1), 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str2), 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str3), 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str4), 1);
-	ft_putchar_fd('\n', 1);
+	char str1[] = "0";
+	int result = ft_atoi(str1);
+	printf("%d\n", result);
+	//ft_putnbr_fd(atoi(str1), 1);
 }*/

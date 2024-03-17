@@ -6,13 +6,13 @@
 /*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:41:35 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 14:47:55 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:43:45 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t num_elements, size_t element_size)
+void	*ft_calloc(size_t num_elements, size_t element_size)
 {
 	void	*destination;
 

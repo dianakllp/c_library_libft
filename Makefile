@@ -10,14 +10,14 @@ SOURCES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_atoi.c ft_striteri.c ft_strjoin.c ft_strmapi.c ft_substr.c \
 	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c 
 
-OBJECTS = $(SOURCES: .c=.o)
+OBJECTS = $(SOURCES:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -o $< -c $@
+.c:.o
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
 	ar rcs ${NAME} ${OBJECTS}
@@ -30,4 +30,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:     all clean fclean re
+tests:	re
+		bash .tests/run_tests.sh
+
+.PHONY:     all clean fclean re tests

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:36:07 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 14:36:11 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:35:33 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int			i;
+	size_t			i;
 	size_t		len_of_sub;
 	char		*substring;
 

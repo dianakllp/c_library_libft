@@ -6,7 +6,7 @@
 /*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:38:46 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 15:05:21 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:56:16 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	}
 	ft_memcpy(dest, s1, string1_len);
-	ft_memcpy(&dest[string1_len] s2, string2_len + 1);
+	ft_memcpy(dest + string1_len, s2, string2_len + 1);
+	return(dest);
 }

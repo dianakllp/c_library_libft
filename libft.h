@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkolopen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dkolopen <dkolopen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 14:38:21 by dkolopen          #+#    #+#             */
-/*   Updated: 2024/03/17 14:38:23 by dkolopen         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:47:54 by dkolopen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# define RED  "\x1B[31m"
+# define GREEN  "\x1B[32m"
+# define NORMAL  "\x1B[0m"
+# include <stdio.h>
 
 //function of lib
 size_t	ft_strlen(const char *src);
@@ -38,7 +43,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset( void *s1, int c, size_t n);
 void	*ft_calloc(size_t num, size_t size);//malloc
-char	*ft_strdup(const void *str);//malloc
+char	*ft_strdup(const char *str);//malloc
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 //functions not in lib
 void	ft_putchar_fd(char c, int fd);
