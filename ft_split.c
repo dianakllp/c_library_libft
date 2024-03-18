@@ -11,53 +11,82 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-static int num_of_sub(char const *string, char character) {
-    int substrings = 0;
-    
-    while (*string) {
-        if (*string != character) {
-            substrings++;
-            while (*string != character && *string)
-                string++;
-        } else {
-            string++;
-        }
-    }
-    return substrings;
+static char	*ft_strndup(char const *str, int n)
+{
+	char	*new;
+	int		i;
+
+	new = (char *) malloc((n + 1) * sizeof(char));
+	if (!new)
+		return (0);
+	i = 0;
+	while (i < n && str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i] = 0;
+	return (new);
 }
 
-char **ft_split(char const *s, char c) {
-    int i = 0, j = 0;
-    int start, end;
-    char **memory;
+static int	count_elements(char const *str, char c)
+{
+	int	i;
+	int	string_counter;
+	int	is_word_last;
+	int	res;
 
-    memory = (char **)malloc((num_of_sub(s, c) + 1) * sizeof(char *));
-    if (memory == NULL)
-        return NULL;
+	i = 1;
+	string_counter = 0;
+	if (!str[0])
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == c && str[i - 1] != c)
+			string_counter++;
+		i++;
+	}
+	is_word_last = str[i - 1] != c;
+	res = string_counter + is_word_last;
+	return (res);
+}
 
-    while (s[i] != '\0') {
-        if (s[i] != c) {
-            start = i;
-            while (s[i] != c && s[i] != '\0')
-                i++;
-            end = i;
-            memory[j] = (char *)malloc(end - start + 1);
-            if (memory[j] == NULL)
-                return NULL;
-            for (int k = 0; k < end - start; k++) {
-                memory[j][k] = s[start + k];
-            }
-            memory[j][end - start] = '\0';
-            j++; // Increment index for the next string
-        } else {
-            i++;
-        }
-    }
-    memory[j] = NULL; // Null-terminate the array of strings
-    return memory;
+static int	calc_len(char const *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+	{
+		i++;
+	}
+	return (i);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	int		i;
+	int		word_len;
+
+	dest = (char **) malloc((count_elements(s, c) + 1) * sizeof(char *));
+	if (!dest)
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			word_len = calc_len(s, c);
+			dest[i++] = ft_strndup(s, word_len);
+			s += word_len;
+		}
+		else
+			s++;
+	}
+	dest[i] = 0;
+	return (dest);
 }
 
 /*int main() {

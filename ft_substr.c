@@ -16,21 +16,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*substring;
 
-	if(!s)
+	if (!s)
 	{
 		return (NULL);
 	}
-	if(ft_strlen(s)< start)
+	if (ft_strlen(s) < start)
 	{
 		return (ft_strdup(""));
 	}
-	if(ft_strlen(s) < start + len)
+	if (ft_strlen(s) < start + len)
 	{
-		len = ft_strlen(s) - start; 
+		len = ft_strlen(s) - start;
 	}
 	substring = (char *)malloc((len + 1) * sizeof(char));
 	if (substring == NULL)
 		return (NULL);
-	ft_strlcpy(substring, s + start , len + 1); 
+	ft_strlcpy(substring, s + start, len + 1);
 	return (substring);
 }
