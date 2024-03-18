@@ -30,7 +30,4 @@ fclean: clean
 
 re: fclean all
 
-tests:	re
-		bash .tests/run_tests.sh
-
 .PHONY:     all clean fclean re tests
