@@ -20,7 +20,7 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	if (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 	{
 		nptr++;
 	}
@@ -42,7 +42,7 @@ int	ft_atoi(const char *nptr)
 
 /*int main()
 {
-	char str1[] = "546:5";
+	char str1[] = "\n\n\n  -46\b9 \n5d6";
 	int result = ft_atoi(str1);
 	printf("%d\n", result);
 	//ft_putnbr_fd(atoi(str1), 1);
